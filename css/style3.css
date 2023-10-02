@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background: url('../img/project3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container__project3 {
+    width: 65%;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 0 4px black;
+}
+
+.container__project3 .title__project3 {
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 2px groove goldenrod;
+}
+
+.container__project3 .content-container .question {
+    padding: 10px 0;
+    font-size: 22px;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+
+    position: relative; /* konten menjadi relatis*/
+}
+
+/* pseudo class menambahkan konten di sebelah question*/
+.container__project3 .content-container .question::after {
+    content: ' + ';
+
+    position: absolute;
+    right: -5px;
+}
+
+.container__project3 .content-container .answer {
+    padding-top: 15px;
+    font-size: 20px;
+    line-height: 1.5rem;
+    width: 100%;
+
+    /* membuat answer hidden */
+    height: 0px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+
+/* panggil classList.toggle('active') javascript style link */
+
+.container__project3 .content-container.active .answer {
+    height: auto;
+    font-size: 1rem;
+    
+}
+
+.container__project3 .content-container.active .question {
+    font-size: 14px;
+    line-height: 18px;
+    transition: .5s;
+}
+
+
+/* pseudo class ::after , mengubah konten yang awal + menjadi '- */
+.container__project3 .content-container.active .question::after {
+    content: ' - ';
+    font-size: 30px;
+    transition: .5s;
+    color: red;
+}
